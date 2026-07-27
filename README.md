@@ -31,8 +31,15 @@ Each app has its own venv (Python 3.11+ recommended):
 
 \```
 cd flask_app
+
+# Windows
 python -m venv .venv
-.venv\Scripts\Activate.ps1   # Windows
+.venv\Scripts\Activate.ps1
+
+# Linux
+pyhton3 -m venv .venv
+source .venv/bin/activate
+
 pip install -r requirements.txt
 \```
 
@@ -104,6 +111,15 @@ the wait (async).
   `ReadTimeout` / 500 errors that look like a bug but are actually just an unconfigured timeout.
 - gunicorn does not run on native Windows (needs `fcntl`, Unix-only) — waitress is the
   cross-platform equivalent used here instead, and works identically on Windows and Linux.
+
+## Deployment
+
+This project runs directly via Python venvs (see Setup above) — no containerization.
+Docker was considered but skipped: since the benchmark relies on multiple processes
+talking to each other over `localhost` (main app → mock external API), containerizing
+would require solving inter-container networking for no benefit to the actual teaching
+goal. Running as plain OS processes keeps the setup mechanical and identical across
+Windows and Linux.
 
 ## Cross-platform notes
 
