@@ -51,17 +51,17 @@ python shared\seed_db.py
 All commands run from the **repo root**, with the relevant venv activated:
 
 1. Mock external API (port 9000):
-   \```
+   ```
    python -m shared.mock_external_api
-   \```
+   ```
 2. Flask app (port 8000):
-   \```
+   ```
    python -m flask_app.app
-   \```
+   ```
 3. FastAPI app (port 8001):
-   \```
+   ```
    python -m fastapi_app.main
-   \```
+   ```
 
 Swagger docs: `http://localhost:8000/` (Flask), `http://localhost:8001/docs` (FastAPI)
 
@@ -74,19 +74,19 @@ Swagger docs: `http://localhost:8000/` (Flask), `http://localhost:8001/docs` (Fa
 ## Running the benchmark
 
 With all 3 servers running, in a 4th terminal:
-\```
+```
 python -m shared.benchmark flask
 python -m shared.benchmark fastapi
-\```
+```
 
 Fires 5 concurrent requests at `/items/32/roll` and times the whole batch.
 
 ### Actual results from this repo
 
-\```
+```
 Flask (sync, single-threaded waitress):   35.54s for 5 requests (~7s apart, fully serial)
 FastAPI (async, uvicorn):                  5.68s for 5 requests (~6x faster)
-\```
+```
 
 ## The lesson
 
