@@ -44,7 +44,8 @@ Build the database once (either venv works, uses only stdlib):
 
 \```
 python shared\seed_db.py
-\```## Running it — you need 3 terminals
+\```
+## Running it — you need 3 terminals
 
 All commands run from the **repo root**, with the relevant venv activated:
 
