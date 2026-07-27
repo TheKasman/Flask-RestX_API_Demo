@@ -9,4 +9,5 @@ api = Api(app, version="1.0", title="RPG Items API", description="Flask-RESTX de
 api.add_namespace(items_ns, path="/items")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000, debug = True)
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8000, threads=1)

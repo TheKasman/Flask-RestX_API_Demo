@@ -8,6 +8,9 @@ MOCK_API_URL = "http://localhost:9000"
 @ns.route("/<int:item_id>/roll")
 class ItemRoll(Resource):
     def get(self, item_id):
+        import time as time_module
+        print(f"[FLASK] Request received at {time_module.time():.2f}")
+
         session = SessionLocal()
         try:
             item = session.query(Item).filter(Item.id == item_id).first()
