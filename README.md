@@ -31,23 +31,20 @@ Each app has its own venv (Python 3.11+ recommended):
 
 \```
 cd flask_app
-python -m venv .venv # Windows
-.venv\Scripts\Activate.ps1
-
-pyhton3 -m venv .venv # Linux
-source .venv/bin/activate
-
+python -m venv .venv          # Windows
+.venv\Scripts\Activate.ps1    # Windows
+python3 -m venv .venv         # Linux/Mac
+source .venv/bin/activate     # Linux/Mac
 pip install -r requirements.txt
 \```
 
 Repeat for `fastapi_app/`.
 
 Build the database once (either venv works, uses only stdlib):
+
 \```
 python shared\seed_db.py
-\```
-
-## Running it — you need 3 terminals
+\```## Running it — you need 3 terminals
 
 All commands run from the **repo root**, with the relevant venv activated:
 
