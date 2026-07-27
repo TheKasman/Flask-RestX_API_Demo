@@ -31,13 +31,10 @@ Each app has its own venv (Python 3.11+ recommended):
 
 \```
 cd flask_app
-
-### Windows
-python -m venv .venv
+python -m venv .venv # Windows
 .venv\Scripts\Activate.ps1
 
-### Linux
-pyhton3 -m venv .venv
+pyhton3 -m venv .venv # Linux
 source .venv/bin/activate
 
 pip install -r requirements.txt
