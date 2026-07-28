@@ -56,7 +56,7 @@ you've made to the existing file will be lost.
 
 All commands run from the **repo root**, with the relevant venv activated:
 
-1. Mock external API (port 9000):
+1. Mock external API (port 9000 RUN IN FLASK VENV): 
    ```
    python -m shared.mock_external_api
    ```
