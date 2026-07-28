@@ -73,7 +73,7 @@ Swagger docs: `http://localhost:8000/` (Flask), `http://localhost:8001/docs` (Fa
 
 ## Running the benchmark
 
-With all 3 servers running, in a 4th terminal:
+With all 3 servers running, in a 4th terminal (This one HAS to be in a FastAPI venv container, the flask one does not have httpx installed):
 ```
 python -m shared.benchmark flask
 python -m shared.benchmark fastapi
