@@ -40,11 +40,17 @@ pip install -r requirements.txt
 
 Repeat for `fastapi_app/`.
 
-Build the database once (either venv works, uses only stdlib):
+The database (`shared/rpg_items.sqlite3`) is already included in this repo — no need to
+generate it to get started. If you want to reset it or regenerate it from scratch:
+
 
 ```
-python shared\seed_db.py
+python shared\seed_db.py    # Windows
+python3 shared/seed_db.py   # Linux/Mac
 ```
+
+**Warning:** this deletes and rebuilds the database with fresh random data — any changes
+you've made to the existing file will be lost.
 
 ## Running it — you need 3 terminals
 
